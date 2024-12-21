@@ -1,0 +1,18 @@
+#cloud-config
+hostname: "web-${vm_index}"
+
+packages:
+  - apache2
+
+write_files:
+  - path: /var/www/html/index.html
+    # language=html
+    content: |
+      <html lang="en">
+      <head>
+          <title>VM Web</title>
+      </head>
+      <body>
+      <h1>VM Web ${vm_index}</h1>
+      </body>
+      </html>
